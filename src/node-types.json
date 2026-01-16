@@ -30,21 +30,34 @@
   {
     "type": "channel",
     "named": true,
-    "fields": {},
+    "fields": {
+      "implements": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "implements",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "extends",
-          "named": true
-        },
-        {
-          "type": "implements",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -96,22 +109,84 @@
   {
     "type": "condition",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "value",
-          "named": true
-        }
-      ]
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
     "type": "connection",
     "named": true,
-    "fields": {},
+    "fields": {
+      "dest": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "dest",
+            "named": true
+          }
+        ]
+      },
+      "like_expr": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "like_expr",
+            "named": true
+          }
+        ]
+      },
+      "like_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "like_type",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "src": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "src",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -129,23 +204,7 @@
           "named": true
         },
         {
-          "type": "dest",
-          "named": true
-        },
-        {
-          "type": "like_expr",
-          "named": true
-        },
-        {
-          "type": "like_type",
-          "named": true
-        },
-        {
           "type": "loop",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -154,14 +213,6 @@
         },
         {
           "type": "property",
-          "named": true
-        },
-        {
-          "type": "src",
-          "named": true
-        },
-        {
-          "type": "type",
           "named": true
         }
       ]
@@ -197,15 +248,32 @@
   {
     "type": "connections",
     "named": true,
-    "fields": {},
+    "fields": {
+      "allowunconnected": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "allowunconnected",
+            "named": true
+          }
+        ]
+      },
+      "connection_group": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "connection_group",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "allowunconnected",
-          "named": true
-        },
         {
           "type": "comment",
           "named": true
@@ -219,10 +287,6 @@
           "named": true
         },
         {
-          "type": "connection_group",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         }
@@ -232,15 +296,22 @@
   {
     "type": "dest",
     "named": true,
-    "fields": {},
+    "fields": {
+      "gate": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gate",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
-        {
-          "type": "gate",
-          "named": true
-        },
         {
           "type": "module",
           "named": true
@@ -279,17 +350,64 @@
   {
     "type": "gate",
     "named": true,
-    "fields": {},
+    "fields": {
+      "index": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "index",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "plusplpus": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "plusplus",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "vector": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "vector",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "index",
           "named": true
         },
         {
@@ -297,23 +415,7 @@
           "named": true
         },
         {
-          "type": "name",
-          "named": true
-        },
-        {
-          "type": "plusplus",
-          "named": true
-        },
-        {
           "type": "subgate",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -342,16 +444,17 @@
   {
     "type": "import",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -380,30 +483,42 @@
   {
     "type": "inline_comment",
     "named": true,
-    "extra": true,
     "fields": {}
   },
   {
     "type": "inline_properties",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "name",
-          "named": true
-        },
-        {
-          "type": "tag",
-          "named": true
-        }
-      ]
+    "fields": {
+      "index": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "index",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "tag",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -484,33 +599,77 @@
   {
     "type": "loop",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "from_value",
-          "named": true
-        },
-        {
-          "type": "param_name",
-          "named": true
-        },
-        {
-          "type": "to_value",
-          "named": true
-        }
-      ]
+    "fields": {
+      "from_value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "from_value",
+            "named": true
+          }
+        ]
+      },
+      "parame_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "param_name",
+            "named": true
+          }
+        ]
+      },
+      "to_value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "to_value",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
     "type": "module",
     "named": true,
-    "fields": {},
+    "fields": {
+      "implements": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "implements",
+            "named": true
+          }
+        ]
+      },
+      "index": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "index",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "connections",
@@ -522,18 +681,6 @@
         },
         {
           "type": "gates",
-          "named": true
-        },
-        {
-          "type": "implements",
-          "named": true
-        },
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -554,10 +701,21 @@
   {
     "type": "moduleinterface",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "extends",
@@ -565,10 +723,6 @@
         },
         {
           "type": "gates",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -586,8 +740,18 @@
   {
     "type": "nedfile",
     "named": true,
-    "root": true,
-    "fields": {},
+    "fields": {
+      "property": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "property",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -625,10 +789,6 @@
           "named": true
         },
         {
-          "type": "property",
-          "named": true
-        },
-        {
           "type": "property_decl",
           "named": true
         },
@@ -642,10 +802,31 @@
   {
     "type": "network",
     "named": true,
-    "fields": {},
+    "fields": {
+      "implements": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "implements",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "connections",
@@ -657,14 +838,6 @@
         },
         {
           "type": "gates",
-          "named": true
-        },
-        {
-          "type": "implements",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -723,16 +896,17 @@
   {
     "type": "package",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -752,6 +926,26 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -760,14 +954,6 @@
       "types": [
         {
           "type": "inline_properties",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        },
-        {
-          "type": "value",
           "named": true
         }
       ]
@@ -820,6 +1006,26 @@
     "type": "property",
     "named": true,
     "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "index",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
       "property_signature": {
         "multiple": true,
         "required": false,
@@ -845,17 +1051,17 @@
             "named": true
           }
         ]
+      },
+      "tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "tag",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "tag",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -909,10 +1115,31 @@
   {
     "type": "simple",
     "named": true,
-    "fields": {},
+    "fields": {
+      "implements": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "implements",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "extends",
@@ -920,14 +1147,6 @@
         },
         {
           "type": "gates",
-          "named": true
-        },
-        {
-          "type": "implements",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         },
         {
@@ -963,15 +1182,22 @@
   {
     "type": "src",
     "named": true,
-    "fields": {},
+    "fields": {
+      "gate": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gate",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
-        {
-          "type": "gate",
-          "named": true
-        },
         {
           "type": "module",
           "named": true
@@ -987,10 +1213,61 @@
   {
     "type": "submodule",
     "named": true,
-    "fields": {},
+    "fields": {
+      "like_expr": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "like_expr",
+            "named": true
+          }
+        ]
+      },
+      "like_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "like_type",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "vector": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "vector",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "condition",
@@ -1001,27 +1278,7 @@
           "named": true
         },
         {
-          "type": "like_expr",
-          "named": true
-        },
-        {
-          "type": "like_type",
-          "named": true
-        },
-        {
-          "type": "name",
-          "named": true
-        },
-        {
           "type": "parameters",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1049,20 +1306,27 @@
   {
     "type": "tag",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        },
-        {
-          "type": "value_list",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "value_list": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "value_list",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1163,16 +1427,17 @@
   {
     "type": "vector",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "size",
-          "named": true
-        }
-      ]
+    "fields": {
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "size",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
