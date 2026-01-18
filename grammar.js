@@ -1,6 +1,8 @@
 module.exports = grammar({
   name: "ned",
 
+  word: ($) => $._NAME, // Increases performance, see https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#keyword-extraction
+
   extras: ($) => [/\s/, $.inline_comment],
 
   conflicts: ($) => [[$._dottedname, $._modulepart]],

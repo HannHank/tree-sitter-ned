@@ -1,5 +1,6 @@
 {
   "name": "ned",
+  "word": "_NAME",
   "rules": {
     "nedfile": {
       "type": "PREC_RIGHT",
