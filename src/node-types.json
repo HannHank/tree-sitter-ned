@@ -1142,6 +1142,10 @@
       "required": false,
       "types": [
         {
+          "type": "connections",
+          "named": true
+        },
+        {
           "type": "extends",
           "named": true
         },
@@ -1151,6 +1155,14 @@
         },
         {
           "type": "parameters",
+          "named": true
+        },
+        {
+          "type": "submodules",
+          "named": true
+        },
+        {
+          "type": "types",
           "named": true
         }
       ]
