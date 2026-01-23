@@ -542,8 +542,12 @@
       ]
     },
     "extends": {
-      "type": "SYMBOL",
-      "name": "_dottedname"
+      "type": "FIELD",
+      "name": "extends",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_dottedname"
+      }
     },
     "_likenames": {
       "type": "SEQ",

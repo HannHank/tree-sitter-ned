@@ -101,7 +101,7 @@ module.exports = grammar({
         seq("extends", $.extends, "like", $._likenames),
       ),
 
-    extends: ($) => $._dottedname,
+    extends: ($) => field("extends", $._dottedname),
 
     _likenames: ($) => seq($._likename, repeat(seq(",", $._likename))),
 

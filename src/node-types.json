@@ -322,7 +322,18 @@
   {
     "type": "extends",
     "named": true,
-    "fields": {}
+    "fields": {
+      "extends": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "from_value",
